@@ -1,0 +1,2 @@
+6647e9589c844ba440e6614276f725a65a5cccdae3c3ab3232011db9ed90dfc5  CaCam-0.9.13-release.apk
+c292ba231823c1afcecafae208f5ecd088ffab81d49d440cd7177a33b6d5be55  CaCam-0.9.13-release.aab

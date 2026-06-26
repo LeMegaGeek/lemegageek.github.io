@@ -1,0 +1,2 @@
+33c30acbb0fbc122af3726fbdc7de3e4f85fe98320ed3665e56c9a22f6f3de1d  bgobs-0.3.14-windows-x64.zip
+197d5e214fef3dd213d4501a54bbc80b719a722479d5195d9571bbd427f14f49  bgobs-0.3.14-linux-x86_64.tar.gz

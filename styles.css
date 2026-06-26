@@ -25,11 +25,13 @@ body {
 .page {
   min-height: 100vh;
   display: grid;
+  gap: 54px;
   place-items: center;
-  padding: 32px 20px;
+  padding: 32px 20px 64px;
 }
 
-.product {
+.product,
+.downloads {
   width: min(920px, 100%);
 }
 
@@ -53,6 +55,20 @@ h1 {
   margin: 0;
   font-size: clamp(3.25rem, 11vw, 7rem);
   line-height: 0.95;
+  letter-spacing: 0;
+}
+
+h2 {
+  margin: 0;
+  font-size: clamp(2.2rem, 7vw, 4.4rem);
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.45rem;
+  line-height: 1.1;
   letter-spacing: 0;
 }
 
@@ -97,6 +113,45 @@ h1 {
   outline: none;
 }
 
+.release-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.release {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.release p {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.links.compact {
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.links.compact a {
+  min-height: 42px;
+  padding: 0 14px;
+  font-size: 0.94rem;
+}
+
+.links.compact a:first-child {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #ffffff;
+}
+
 @media (max-width: 620px) {
   .page {
     place-items: start;
@@ -114,5 +169,9 @@ h1 {
   .links a {
     justify-content: center;
     width: 100%;
+  }
+
+  .release-grid {
+    grid-template-columns: 1fr;
   }
 }
