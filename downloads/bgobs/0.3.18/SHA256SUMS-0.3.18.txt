@@ -1,0 +1,1 @@
+a7afa1264b97a651bc967f284666dada77de935db1ad97399d2ff85c4f8fcc1c  bgobs-0.3.18-windows-x64.zip
