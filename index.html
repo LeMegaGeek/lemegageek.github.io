@@ -1,80 +1,168 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LeMegaGeek - CaCam</title>
+    <title>LeMegaGeek — CaCam and BGOBS</title>
     <meta
       name="description"
-      content="CaCam transforme un telephone Android en webcam locale pour OBS Studio."
+      content="CaCam turns an Android phone into a local camera. BGOBS is an open-source plugin for OBS Studio with video effects and direct CaCam USB input."
     >
-    <link rel="stylesheet" href="styles.css">
+    <meta name="theme-color" content="#1c100b">
+    <link rel="icon" type="image/png" href="/assets/cacam-icon-192.png">
+    <link rel="canonical" href="https://lemegageek.github.io/">
+    <link rel="alternate" hreflang="en" href="https://lemegageek.github.io/">
+    <link rel="alternate" hreflang="fr" href="https://lemegageek.github.io/fr/">
+    <link rel="alternate" hreflang="x-default" href="https://lemegageek.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LeMegaGeek">
+    <meta property="og:title" content="CaCam and BGOBS">
+    <meta
+      property="og:description"
+      content="A proprietary, closed-source Android camera app and an open-source plugin for OBS Studio — two distinct products that work beautifully together."
+    >
+    <meta property="og:url" content="https://lemegageek.github.io/">
+    <meta property="og:image" content="https://lemegageek.github.io/assets/hero.png">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="fr_FR">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/language.js"></script>
   </head>
   <body>
-    <main class="page">
-      <section class="product" aria-labelledby="product-title">
-        <img class="hero-image" src="assets/hero.png" alt="">
-        <div class="product-content">
-          <img class="logo" src="assets/cacam-logo.png" alt="CaCam">
-          <p class="developer">LeMegaGeek</p>
-          <h1 id="product-title">CaCam</h1>
-          <p class="description">
-            Transforme un telephone Android en webcam locale pour OBS Studio,
-            sans pilote PC ni application compagnon.
+    <header class="site-header">
+      <a class="site-name" href="/" aria-label="LeMegaGeek home">LeMegaGeek</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#products">Products</a>
+        <a href="https://github.com/LeMegaGeek/bgobs">GitHub</a>
+        <span class="language-switch" aria-label="Language">
+          <a class="is-current" href="/?lang=en" lang="en" aria-current="page">EN</a>
+          <a href="/fr/?lang=fr" lang="fr" hreflang="fr">FR</a>
+        </span>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <picture>
+          <source srcset="/assets/hero.webp" type="image/webp">
+          <img class="hero-image" src="/assets/hero.png" alt="" fetchpriority="high">
+        </picture>
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <div class="cacam-lockup" aria-label="CaCam">
+            <img src="/assets/cacam-icon-192.png" alt="" width="112" height="112">
+            <span class="wordmark"><span>Ca</span><strong>Cam</strong></span>
+          </div>
+          <p class="eyebrow">Android camera · Local by design</p>
+          <h1 id="hero-title">Your phone.<br>A camera for your studio.</h1>
+          <p class="hero-copy">
+            CaCam turns an Android phone into a local video source for OBS Studio,
+            over USB, ADB, or your local network.
           </p>
-          <nav class="links" aria-label="Liens CaCam">
-            <a href="#downloads-title">Telechargements publics</a>
-            <a href="https://gist.github.com/LeMegaGeek/05d2b93f2d3361d2b678c152d1672a81">
-              Politique de confidentialite
-            </a>
-          </nav>
+          <div class="actions">
+            <a class="button button-primary" href="#cacam-downloads">Download CaCam</a>
+            <a class="button button-glass" href="#bgobs">Discover BGOBS</a>
+          </div>
         </div>
       </section>
-      <section class="downloads" aria-labelledby="downloads-title">
-        <p class="developer">Telechargements publics</p>
-        <h2 id="downloads-title">Releases</h2>
-        <div class="release-grid">
-          <article class="release">
-            <h3>CaCam 0.9.14</h3>
-            <p>
-              Application Android avec correction de l'orientation camera pour
-              garder l'image droite dans l'apercu, les flux MJPEG/ADB et USB
-              BGOBS.
-            </p>
-            <div class="links compact" aria-label="Telechargements CaCam">
-              <a href="downloads/cacam/0.9.14/CaCam-0.9.14-release.apk">
-                APK Android
-              </a>
-              <a href="downloads/cacam/0.9.14/CaCam-0.9.14-release.aab">
-                Bundle Play
-              </a>
-              <a href="downloads/cacam/0.9.14/SHA256SUMS-0.9.14.txt">
-                SHA-256
-              </a>
+
+      <section class="products-section" id="products" aria-labelledby="products-title">
+        <div class="section-heading">
+          <p class="eyebrow">Two products, two clear models</p>
+          <h2 id="products-title">Choose the connection that fits your studio.</h2>
+          <p>
+            CaCam and BGOBS integrate with each other, but they are distributed
+            separately and do not share the same licensing model.
+          </p>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card cacam-card" id="cacam">
+            <div class="card-topline">
+              <span class="product-mark product-mark-cacam" aria-hidden="true">
+                <img src="/assets/cacam-icon-192.png" alt="" width="72" height="72">
+              </span>
+              <span class="status status-private">Proprietary · Private source</span>
             </div>
+            <p class="product-kicker">Android application</p>
+            <h3>CaCam</h3>
+            <p class="product-description">
+              A signed Android app that sends the phone camera directly to your
+              computer. Its source code is private; public application builds are
+              provided here.
+            </p>
+            <ul class="feature-list">
+              <li>Cable-only USB BGOBS mode by default</li>
+              <li>ADB, MJPEG/HTTP, and RTSP/H.264 transports</li>
+              <li>No account, analytics, ads, or remote CaCam server</li>
+            </ul>
+            <div class="release-block" id="cacam-downloads">
+              <div>
+                <span class="release-label">Current release</span>
+                <strong>0.9.15</strong>
+              </div>
+              <span class="release-date">July 21, 2026</span>
+            </div>
+            <div class="card-actions" aria-label="CaCam 0.9.15 downloads">
+              <a class="button button-dark" href="/downloads/cacam/0.9.15/CaCam-0.9.15-release.apk">Android APK</a>
+              <a class="text-link" href="/downloads/cacam/0.9.15/CaCam-0.9.15-release.aab">Play bundle</a>
+              <a class="text-link" href="/downloads/cacam/0.9.15/SHA256SUMS-0.9.15.txt">SHA-256</a>
+            </div>
+            <a class="policy-link" href="https://gist.github.com/LeMegaGeek/05d2b93f2d3361d2b678c152d1672a81">Privacy policy</a>
           </article>
-          <article class="release">
-            <h3>Beau Gosse OBS 0.3.18</h3>
-            <p>
-              Plugin OBS pour utiliser CaCam en USB BGOBS et conserver les
-              presets BGOBS sans repasser inutilement en mode personnalise. Sous
-              Windows, OBS peut devoir etre lance en administrateur pour acceder
-              au peripherique USB.
-            </p>
-            <div class="links compact" aria-label="Telechargements Beau Gosse OBS">
-              <a href="downloads/bgobs/0.3.18/bgobs-0.3.18-windows-x64.zip">
-                Windows x64
-              </a>
-              <a href="https://github.com/LeMegaGeek/bgobs/releases/tag/v0.3.18">
-                Release GitHub
-              </a>
-              <a href="downloads/bgobs/0.3.18/SHA256SUMS-0.3.18.txt">
-                SHA-256
-              </a>
+
+          <article class="product-card bgobs-card" id="bgobs">
+            <div class="card-topline">
+              <span class="product-mark product-mark-bgobs" aria-hidden="true">BG</span>
+              <span class="status status-open">Open source · GPL-3.0-or-later</span>
             </div>
+            <p class="product-kicker">Third-party plugin for OBS Studio</p>
+            <h3>BGOBS <small>Beau Gosse</small></h3>
+            <p class="product-description">
+              An open-source plugin for background effects, cleaner subject edges,
+              low-light enhancement, and direct CaCam video over USB or ADB.
+            </p>
+            <ul class="feature-list">
+              <li>Background removal and blur filters</li>
+              <li>Edge cleanup and low-light enhancement</li>
+              <li>Optional direct CaCam USB and ADB sources</li>
+            </ul>
+            <div class="release-block">
+              <div>
+                <span class="release-label">Current release</span>
+                <strong>0.3.19</strong>
+              </div>
+              <span class="release-date">Source available to everyone</span>
+            </div>
+            <div class="card-actions" aria-label="BGOBS links">
+              <a class="button button-blue" href="https://github.com/LeMegaGeek/bgobs">Source code on GitHub</a>
+              <a class="text-link" href="/bgobs/">Documentation</a>
+              <a class="text-link" href="https://github.com/LeMegaGeek/bgobs/releases/tag/v0.3.19">Latest release</a>
+            </div>
+            <p class="disclaimer">
+              Independent third-party software; not affiliated with or endorsed by
+              the OBS Project.
+            </p>
           </article>
         </div>
+      </section>
+
+      <section class="connection-section" aria-labelledby="connection-title">
+        <div>
+          <p class="eyebrow">One cable, no cloud</p>
+          <h2 id="connection-title">CaCam captures. BGOBS receives.</h2>
+        </div>
+        <p>
+          Use CaCam on Android by itself with standard local protocols, or pair it
+          with the open-source BGOBS plugin for a direct USB workflow inside OBS
+          Studio. Video stays between your devices.
+        </p>
       </section>
     </main>
+
+    <footer>
+      <span>© 2026 LeMegaGeek</span>
+      <span>CaCam is proprietary. BGOBS is open source.</span>
+    </footer>
   </body>
 </html>

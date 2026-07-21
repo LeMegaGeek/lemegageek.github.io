@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LeMegaGeek — CaCam et BGOBS</title>
+    <meta
+      name="description"
+      content="CaCam transforme un téléphone Android en caméra locale. BGOBS est une extension open source pour OBS Studio avec effets vidéo et réception USB directe de CaCam."
+    >
+    <meta name="theme-color" content="#1c100b">
+    <link rel="icon" type="image/png" href="/assets/cacam-icon-192.png">
+    <link rel="canonical" href="https://lemegageek.github.io/fr/">
+    <link rel="alternate" hreflang="en" href="https://lemegageek.github.io/">
+    <link rel="alternate" hreflang="fr" href="https://lemegageek.github.io/fr/">
+    <link rel="alternate" hreflang="x-default" href="https://lemegageek.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="LeMegaGeek">
+    <meta property="og:title" content="CaCam et BGOBS">
+    <meta
+      property="og:description"
+      content="Une application Android propriétaire au code source fermé et une extension open source pour OBS Studio : deux produits distincts qui fonctionnent parfaitement ensemble."
+    >
+    <meta property="og:url" content="https://lemegageek.github.io/fr/">
+    <meta property="og:image" content="https://lemegageek.github.io/assets/hero.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:locale:alternate" content="en_US">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/language.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="site-name" href="/fr/" aria-label="Accueil LeMegaGeek">LeMegaGeek</a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="#produits">Produits</a>
+        <a href="https://github.com/LeMegaGeek/bgobs">GitHub</a>
+        <span class="language-switch" aria-label="Langue">
+          <a href="/?lang=en" lang="en" hreflang="en">EN</a>
+          <a class="is-current" href="/fr/?lang=fr" lang="fr" aria-current="page">FR</a>
+        </span>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="titre-hero">
+        <picture>
+          <source srcset="/assets/hero.webp" type="image/webp">
+          <img class="hero-image" src="/assets/hero.png" alt="" fetchpriority="high">
+        </picture>
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <div class="cacam-lockup" aria-label="CaCam">
+            <img src="/assets/cacam-icon-192.png" alt="" width="112" height="112">
+            <span class="wordmark"><span>Ca</span><strong>Cam</strong></span>
+          </div>
+          <p class="eyebrow">Caméra Android · Conçue pour rester locale</p>
+          <h1 id="titre-hero">Ton téléphone.<br>Une caméra pour ton studio.</h1>
+          <p class="hero-copy">
+            CaCam transforme un téléphone Android en source vidéo locale pour
+            OBS Studio, par USB, ADB ou sur ton réseau local.
+          </p>
+          <div class="actions">
+            <a class="button button-primary" href="#telechargements-cacam">Télécharger CaCam</a>
+            <a class="button button-glass" href="#bgobs">Découvrir BGOBS</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="products-section" id="produits" aria-labelledby="titre-produits">
+        <div class="section-heading">
+          <p class="eyebrow">Deux produits, deux modèles clairement annoncés</p>
+          <h2 id="titre-produits">Choisis la connexion adaptée à ton studio.</h2>
+          <p>
+            CaCam et BGOBS s’intègrent l’un à l’autre, mais sont distribués
+            séparément et n’utilisent pas le même modèle de licence.
+          </p>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card cacam-card" id="cacam">
+            <div class="card-topline">
+              <span class="product-mark product-mark-cacam" aria-hidden="true">
+                <img src="/assets/cacam-icon-192.png" alt="" width="72" height="72">
+              </span>
+              <span class="status status-private">Propriétaire · Code source privé</span>
+            </div>
+            <p class="product-kicker">Application Android</p>
+            <h3>CaCam</h3>
+            <p class="product-description">
+              Une application Android signée qui envoie directement la caméra du
+              téléphone vers l’ordinateur. Son code source est privé ; les
+              versions publiques de l’application sont proposées ici.
+            </p>
+            <ul class="feature-list">
+              <li>Mode USB BGOBS limité au câble et sélectionné par défaut</li>
+              <li>Transports ADB, MJPEG/HTTP et RTSP/H.264</li>
+              <li>Sans compte, analyse d’usage, publicité ni serveur CaCam distant</li>
+            </ul>
+            <div class="release-block" id="telechargements-cacam">
+              <div>
+                <span class="release-label">Version actuelle</span>
+                <strong>0.9.15</strong>
+              </div>
+              <span class="release-date">21 juillet 2026</span>
+            </div>
+            <div class="card-actions" aria-label="Téléchargements CaCam 0.9.15">
+              <a class="button button-dark" href="/downloads/cacam/0.9.15/CaCam-0.9.15-release.apk">APK Android</a>
+              <a class="text-link" href="/downloads/cacam/0.9.15/CaCam-0.9.15-release.aab">Bundle Play</a>
+              <a class="text-link" href="/downloads/cacam/0.9.15/SHA256SUMS-0.9.15.txt">SHA-256</a>
+            </div>
+            <a class="policy-link" href="https://gist.github.com/LeMegaGeek/05d2b93f2d3361d2b678c152d1672a81">Politique de confidentialité (en anglais)</a>
+          </article>
+
+          <article class="product-card bgobs-card" id="bgobs">
+            <div class="card-topline">
+              <span class="product-mark product-mark-bgobs" aria-hidden="true">BG</span>
+              <span class="status status-open">Open source · GPL-3.0-or-later</span>
+            </div>
+            <p class="product-kicker">Extension tierce pour OBS Studio</p>
+            <h3>BGOBS <small>Beau Gosse</small></h3>
+            <p class="product-description">
+              Une extension open source pour supprimer ou flouter l’arrière-plan,
+              améliorer les contours et la basse lumière, et recevoir directement
+              la vidéo USB ou ADB de CaCam.
+            </p>
+            <ul class="feature-list">
+              <li>Suppression et flou d’arrière-plan</li>
+              <li>Amélioration des contours et de la basse lumière</li>
+              <li>Sources USB et ADB CaCam directes et facultatives</li>
+            </ul>
+            <div class="release-block">
+              <div>
+                <span class="release-label">Version actuelle</span>
+                <strong>0.3.19</strong>
+              </div>
+              <span class="release-date">Code source accessible à tous</span>
+            </div>
+            <div class="card-actions" aria-label="Liens BGOBS">
+              <a class="button button-blue" href="https://github.com/LeMegaGeek/bgobs">Code source sur GitHub</a>
+              <a class="text-link" href="/bgobs/">Documentation</a>
+              <a class="text-link" href="https://github.com/LeMegaGeek/bgobs/releases/tag/v0.3.19">Dernière version</a>
+            </div>
+            <p class="disclaimer">
+              Logiciel tiers indépendant, sans affiliation ni approbation du projet OBS.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="connection-section" aria-labelledby="titre-connexion">
+        <div>
+          <p class="eyebrow">Un câble, aucun cloud</p>
+          <h2 id="titre-connexion">CaCam capture. BGOBS reçoit.</h2>
+        </div>
+        <p>
+          Utilise CaCam seul sur Android avec des protocoles locaux standards,
+          ou associe-le à l’extension open source BGOBS pour une liaison USB
+          directe dans OBS Studio. La vidéo reste entre tes appareils.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 LeMegaGeek</span>
+      <span>CaCam est propriétaire. BGOBS est open source.</span>
+    </footer>
+  </body>
+</html>
