@@ -352,12 +352,14 @@ h2 {
 
 .product-mark-bgobs {
   border-radius: 20px;
-  background: linear-gradient(145deg, #0b9abf, #07556c);
   box-shadow: 0 14px 30px rgba(8, 127, 159, 0.24);
-  color: #fff;
-  font-size: 1.35rem;
-  font-weight: 900;
-  letter-spacing: -0.06em;
+  overflow: hidden;
+}
+
+.product-mark-bgobs img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
 }
 
 .status {
