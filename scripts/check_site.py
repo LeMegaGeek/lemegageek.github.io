@@ -60,10 +60,12 @@ def main() -> None:
 
         assert document.html_lang == expected_languages[relative], relative
         assert {"en", "fr", "x-default"} <= document.alternates.keys(), relative
+        assert "/bgobs/" in document.links, relative
         assert "https://github.com/LeMegaGeek/bgobs" in document.links, relative
         assert "Proprietary" in source or "Propriétaire" in source, relative
         assert "GPL-3.0-or-later" in source, relative
         assert "assets/cacam-logo.png" not in source, relative
+        assert any(src == "/assets/bgobs-logo-192.png" for src, _alt in document.images), relative
 
         for url in document.links + [src for src, _alt in document.images]:
             target = local_target(url)
