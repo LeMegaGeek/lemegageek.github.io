@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Confidentialité — Rhythmbox Musique</title>
+  <link rel="canonical" href="https://lemegageek.github.io/rhythmbox/confidentialite.html">
+  <style>
+    :root { color-scheme: light dark; font-family: system-ui, sans-serif; line-height: 1.65; }
+    body { max-width: 48rem; margin: 0 auto; padding: 2.5rem 1.3rem 4rem; }
+    h1,h2 { line-height: 1.2; } h1 { font-size: 2.1rem; } h2 { margin-top: 2rem; font-size: 1.35rem; }
+    a { color: #137c75; } small { color: #666; }
+    @media(prefers-color-scheme:dark) { a { color:#8ae5cf; } small { color:#bfc8cf; } }
+  </style>
+</head>
+<body>
+<header>
+  <nav aria-label="Rhythmbox pour Android"><a href="index.html">Android</a> · <a href="confidentialite.html" aria-current="page">Confidentialité</a> · <a href="sources.html">Sources</a></nav>
+  <p>Rhythmbox Musique</p>
+  <h1>Votre musique reste sous votre contrôle</h1>
+  <p>Politique de confidentialité — mise à jour du 29 octobre 2026</p>
+</header>
+<main>
+  <h2>Éditeur et contact</h2>
+  <p>L'application Android Rhythmbox Musique est publiée par LeMegaGeek.
+  Pour une question relative aux données ou à l'application, écrivez à
+  <a href="mailto:support-cacam@chey.net">support-cacam@chey.net</a>.</p>
+
+  <h2>Fonctionnement sur votre appareil</h2>
+  <p>Le lecteur conserve vos listes, les informations des morceaux et vos choix de mise à l'écart
+  dans le stockage privé de l'application. La recherche et les commandes de lecture sont
+  traitées localement. L'application ne contient aucun système publicitaire, outil d'analyse
+  d'audience ou outil d'envoi automatique de rapports de crash à l'éditeur.</p>
+  <p>Les sons du mode découverte sont des séquences synthétiques originales générées sur l'appareil. Cette découverte
+  peut être utilisée sans compte ni connexion réseau et reste séparée de vos listes personnelles.</p>
+
+  <h2>Les dossiers que vous choisissez</h2>
+  <p>Vous choisissez les dossiers musique et listes avec le sélecteur Android. Le dossier musique
+  reçoit une autorisation de lecture ; le dossier de listes reçoit une autorisation de lecture
+  et d'écriture. L'application n'utilise pas de permission générale sur vos fichiers. Choisissez
+  des dossiers réservés à la musique et aux listes, pas la racine de votre espace personnel.</p>
+  <p>Le fournisseur de documents que vous sélectionnez peut transférer des fichiers sur son
+  propre service. Sa disponibilité, ses traitements réseau et ses règles de confidentialité
+  relèvent de ce fournisseur.</p>
+
+  <h2>Synchronisation facultative</h2>
+  <p>Lorsque vous demandez un envoi, les métadonnées de vos listes sont chiffrées avec
+  AES-256-GCM avant leur écriture dans le dossier d'échange. Seuls les appareils auxquels
+  vous fournissez la clé partagée peuvent les déchiffrer. Cette clé est conservée localement
+  et n'est pas incluse dans les fichiers synchronisés. L'éditeur ne possède pas de serveur
+  recevant vos clés ou votre bibliothèque.</p>
+  <p>Le fichier d'association transféré depuis votre ordinateur contient la clé privée.
+  Conservez-le dans un emplacement privé, hors du dossier synchronisé. Les paramètres du
+  téléphone sont chiffrés à l'aide d'Android Keystore ; la sauvegarde système des données
+  de l'application est désactivée.</p>
+
+  <h2>Connexion pCloud par liens</h2>
+  <p>Le mode avancé utilise les liens de lecture, de dépôt et, si vous le souhaitez, de musique
+  que vous fournissez. Il ne demande pas votre mot de passe pCloud ni de jeton donnant accès
+  à tout votre compte. Les appels sont limités aux méthodes publiques nécessaires aux liens
+  et au contenu des partages sélectionnés. Les connexions réalisées par l'application sont
+  en HTTPS et les redirections réseau sont refusées.</p>
+  <p>Pour servir une demande, pCloud reçoit notamment votre adresse IP, une indication
+  générique de l'application et les codes ou identifiants requis par les liens. Ces échanges
+  techniques sont soumis à la <a href="https://www.pcloud.com/privacy_policy.html">politique
+  de pCloud</a>. Les demandes de consultation, de téléchargement et de dépôt révèlent au
+  service quelles ressources sont demandées et quand. Sa politique prévoit des traces
+  d'usage et des traitements pour fournir, analyser et sécuriser son service. Le fournisseur
+  de stockage peut connaître les noms techniques, dates et tailles des fichiers chiffrés.
+  Les métadonnées contenues dans les listes restent dans leur enveloppe chiffrée.</p>
+  <p>Les fichiers musicaux accessibles par un lien de partage ne sont pas chiffrés de bout
+  en bout par ce client. Toute personne possédant ce lien peut accéder au contenu autorisé
+  par le partage. L'application n'envoie pas vos fichiers audio lors de la synchronisation
+  des listes et ne modifie pas automatiquement les collections du lecteur officiel pCloud.</p>
+
+  <h2>Lecture, cache et commandes système</h2>
+  <p>Un morceau est préparé dans un cache privé avant sa lecture. Le cache des fichiers personnels
+  conserve au plus le morceau en cours de préparation ou de lecture, avec une limite de 256 Mio
+  par fichier. Les deux courts extraits synthétiques de découverte sont conservés séparément
+  dans ce cache privé. La piste audio d'un conteneur vidéo peut être lue
+  sans afficher sa vidéo si le codec est pris en charge par l'appareil.</p>
+  <p>La MediaSession fournit au système Android le titre, l'artiste et l'état de la lecture
+  pour les commandes multimédias et les périphériques compatibles. La notification de
+  lecture permet de piloter et d'arrêter le service audio. Aucun message marketing n'est envoyé.</p>
+
+  <h2>Mise à l'écart et suppression</h2>
+  <p>Mettre un morceau, un album ou un artiste à l'écart le masque sur ce téléphone et exclut
+  ses entrées des prochains envois. Les identifiants masqués restent locaux. Cette action
+  ne déplace pas vos fichiers musicaux dans le cloud ; le déplacement en quarantaine du PC
+  est une opération distincte.</p>
+  <p>Vous pouvez effacer les données locales dans les réglages Android ou désinstaller
+  l'application. Cela retire la bibliothèque locale, le cache et l'association du téléphone.
+  Les fichiers d'origine, les fichiers d'association que vous avez conservés et les révisions
+  déjà déposées chez votre fournisseur restent sous votre contrôle. Leur suppression se fait
+  dans votre gestionnaire de fichiers ou auprès de ce fournisseur.</p>
+
+  <h2>Compte et permissions</h2>
+  <p>Le client ne crée pas de compte utilisateur propre à l'application. Il ne demande pas
+  l'accès à vos contacts, microphone, position, photos en général ou identifiant publicitaire.
+  Les autorisations réseau et de service média servent à l'accès facultatif au stockage et
+  à la lecture que vous déclenchez.</p>
+
+  <h2>Code source et évolution</h2>
+  <p>Ce client indépendant est distribué sous GPL-2.0-or-later. Le code source correspondant
+  est disponible à <a href="https://lemegageek.github.io/rhythmbox/sources.html">cette adresse</a>. Si son fonctionnement
+  ou ses traitements changent, cette page est mise à jour avant la diffusion concernée.</p>
+</main>
+<footer><small>Cette page décrit Rhythmbox Musique, pas les services tiers que vous pouvez choisir.</small></footer>
+</body>
+</html>

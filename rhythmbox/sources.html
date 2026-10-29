@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sources Android — Rhythmbox Musique</title>
+<meta name="description" content="Sources GPL du candidat Android Rhythmbox Musique 0.4.0, outils de compilation et empreinte de vérification.">
+<link rel="canonical" href="https://lemegageek.github.io/rhythmbox/sources.html">
+<style>
+:root{color-scheme:dark;--bg:#10151e;--panel:#1c2635;--text:#f3f7fd;--muted:#b4c3d7;--accent:#72e1bb;font-family:system-ui,sans-serif;line-height:1.65}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text)}header,main,footer{width:min(100% - 2.5rem,56rem);margin-inline:auto}header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;padding-block:1.5rem;border-bottom:1px solid #35465d}header strong{font-size:1.2rem}a{color:var(--accent);text-underline-offset:.2em}a:focus-visible{outline:3px solid var(--accent);outline-offset:5px}main{padding-block:2.5rem 3.5rem}h1,h2{line-height:1.2;letter-spacing:-.035em}h1{font-size:clamp(2.1rem,6vw,3.4rem);margin:.5rem 0 1rem}h2{font-size:1.45rem;margin-top:2rem}p,li{color:var(--muted);max-width:72ch}.status{padding:.8rem 1rem;background:var(--panel);border-left:3px solid var(--accent)}.button{display:inline-block;margin-block:1rem;padding:.8rem 1.1rem;border-radius:.8rem;background:var(--accent);color:var(--bg);font-weight:700;text-decoration:none}code{overflow-wrap:anywhere;color:var(--text)}pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:1rem;background:var(--panel);border-radius:.8rem;font-size:.85rem}footer{border-top:1px solid #35465d;padding-block:1.5rem 2.5rem;color:var(--muted);font-size:.85rem}.eyebrow{font-size:.85rem;color:var(--accent);font-weight:700}
+</style>
+</head>
+<body>
+<header><strong>Rhythmbox <span style="color:var(--accent)">· Musique</span></strong><nav aria-label="Rhythmbox pour Android"><a href="index.html">Android</a> · <a href="confidentialite.html">Confidentialité</a> · <a href="sources.html" aria-current="page">Sources</a></nav></header>
+<main>
+<p class="eyebrow">ANDROID · LOGICIEL LIBRE</p>
+<h1>Le code de votre lecteur.</h1>
+<p class="status"><strong>Candidat 0.4.0, code 4.</strong> La publication Google Play est en préparation. Cette page fournit les sources du candidat signé préparé pour Google Play. Le lecteur a été validé sur émulateur Android 16.</p>
+<p>Le client Android indépendant Rhythmbox Musique est distribué sous <strong>GPL-2.0-or-later</strong>. Les sources, ressources, formes éditables de l’icône, licence et scripts nécessaires à sa compilation sont fournis ensemble.</p>
+<a class="button" href="/downloads/rhythmbox/0.4.0/rhythmbox-android-0.4.0-sources.tar.gz">Télécharger les sources GPL</a>
+<p><a href="/downloads/rhythmbox/0.4.0/rhythmbox-android-0.4.0-sources.tar.gz.sha256">Télécharger l’empreinte SHA-256</a></p>
+<h2>Vérifier l’archive</h2>
+<pre>SHA-256 : 4cf9f8fdec4aa61bdd9086708aaa2894ac919b199c6c030c4ad3e572b4461df8</pre>
+<p>Après avoir téléchargé les deux fichiers dans le même dossier :</p>
+<pre>sha256sum --check rhythmbox-android-0.4.0-sources.tar.gz.sha256</pre>
+<h2>Compiler et examiner</h2>
+<p>L’archive contient 52 fichiers. Commencez par <code>Rythmbox/android/README.md</code> et <code>Rythmbox/android/RELEASE.md</code>. La compilation utilise Python 3.11 ou ultérieur, JDK 17 ou 21 et les outils Android officiels épinglés par leur empreinte. Android 8 est la version minimale déclarée ; les essais d’exécution de ce candidat ont été effectués sur émulateur Android 16, sans téléphone physique.</p>
+<p>Les fichiers de signature privés, les réglages personnels et les fichiers musicaux de l’utilisateur ne font pas partie de cette archive. Les sons de découverte sont synthétiques et originaux ; leur code de génération est inclus.</p>
+<h2>À quel candidat ces sources correspondent-elles ?</h2>
+<p>APK universel signé correspondant à ces sources :</p>
+<pre>5dc80bf0a4179093c285404bc1e13cc8c41d6922fb898c42ee2a8ffc8d0454ab</pre>
+<p>Bundle Android correspondant :</p>
+<pre>47929bec3a8f0fc990a74fef26feeb5ec8e430c3e8b943e0a7721b18fb20e29c</pre>
+<p>Le client ne nécessite aucun compte pour écouter un dossier local. La connexion facultative aux listes chiffrées est distincte des collections du lecteur officiel pCloud.</p>
+<h2>Licence</h2>
+<p>Le texte de la licence est inclus dans <code>Rythmbox/COPYING</code>. Vous pouvez aussi consulter la <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GNU General Public License, version 2</a>. Le code de ce client est proposé sous cette version ou toute version ultérieure.</p>
+<h2>Assistance</h2>
+<p>Pour une question sur l’application ou vos données : <a href="mailto:support-cacam@chey.net">support-cacam@chey.net</a>.</p>
+</main>
+<footer>LeMegaGeek · Client Android indépendant, sans affiliation avec GNOME ou pCloud. Mise à jour du 29 octobre 2026.</footer>
+</body>
+</html>
