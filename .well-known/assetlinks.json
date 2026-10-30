@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "fr.denis.rhythmbox",
+      "sha256_cert_fingerprints": [
+        "5D:B0:7A:88:4B:1D:5B:60:B7:9A:A4:2F:77:0E:73:71:BE:3D:B4:D6:B9:36:73:06:10:A8:55:0E:03:F0:81:69",
+        "0D:8B:BB:85:7E:CE:AF:45:3A:2F:5A:96:C0:A5:0D:41:6A:2B:B0:92:ED:62:D5:E6:7E:AB:D6:A3:33:08:DF:FD"
+      ]
+    }
+  }
+]
