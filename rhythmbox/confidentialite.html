@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Confidentialité — Rhythmbox Musique</title>
+  <title>Brouillon 0.7.0 — Confidentialité Rhythmbox Musique</title>
   <link rel="canonical" href="https://lemegageek.github.io/rhythmbox/confidentialite.html">
   <style>
     :root { color-scheme: light dark; font-family: system-ui, sans-serif; line-height: 1.65; }
@@ -18,17 +18,17 @@
   <nav aria-label="Rhythmbox pour Android"><a href="index.html">Android</a> · <a href="confidentialite.html" aria-current="page">Confidentialité</a> · <a href="sources.html">Sources</a></nav>
   <p>Rhythmbox Musique pour Android</p>
   <h1>Politique de confidentialité</h1>
-  <p>Mise à jour du 31 octobre 2026. Ce texte décrit les versions 0.4.0 et 0.5.2 selon les
-  fonctions disponibles dans votre version. La 0.4.0 utilise les modes historiques par dossiers
-  et liens. La 0.5.2 inclut la connexion au compte musical par la page officielle pCloud et
-  les fonctions de synchronisation des listes du lecteur pCloud.</p>
+  <p>Mise à jour du 3 novembre 2026. Ce texte décrit les fonctions disponibles selon
+  votre version de Rhythmbox Musique, jusqu’à la version 0.7.0 (code 14) : compte musical
+  pCloud, listes natives, cache privé, copies audio choisies, lecteur PCM, Spotify et Suno.
+  Les versions historiques conservent leurs parcours par dossiers et liens.</p>
 </header>
 <main>
   <h2>Éditeur et contact</h2>
   <p>Rhythmbox Musique est un logiciel libre indépendant proposé par LeMegaGeek.
   Pour une question sur l'application ou vos données, écrivez à
   <a href="mailto:support-cacam@chey.net">support-cacam@chey.net</a>.
-  L'application n'est pas un produit de pCloud ni de GNOME.</p>
+  L'application n'est pas un produit de pCloud, Spotify, Suno ou GNOME.</p>
 
   <h2>Fonctionnement local et autorisations</h2>
   <p>Le lecteur conserve votre bibliothèque, vos listes et vos choix de mise à l'écart dans
@@ -41,7 +41,7 @@
   aux photos en général, aux SMS ou à l'identifiant publicitaire. Elle n'intègre pas de publicité,
   d'analyse d'audience ou d'envoi automatique de rapports de crash à l'éditeur.</p>
 
-  <h2>Connexion au compte musical par la page pCloud — version 0.5.2</h2>
+  <h2>Connexion au compte musical par la page pCloud — depuis la version 0.5.2</h2>
   <p>Rhythmbox dispose de sa propre autorisation, distincte de celle de l'application pCloud
   du téléphone ou de pCloud Drive sur le PC. Vous indiquez dans Rhythmbox l'adresse attendue
   du compte musical. Cette saisie sert à comparer localement l'adresse que pCloud renverra ;
@@ -80,7 +80,7 @@
   normale de 0.5.2 emploie la page pCloud décrite ci-dessus. L'autre parcours OAuth nécessitant
   l'enregistrement préalable de l'application n'est pas activé dans ces versions.</p>
 
-  <h2>Dossier musical et listes natives pCloud — version 0.5.2</h2>
+  <h2>Dossier musical et listes natives pCloud — depuis la version 0.5.2</h2>
   <p>Le sélecteur peut demander les noms et identifiants des dossiers appartenant au compte,
   y compris depuis sa racine, afin de choisir le dossier musical. Il ne demande pas les fichiers
   à cette étape. L'index de fichiers porte ensuite sur le sous-arbre choisi ; la racine du compte
@@ -96,9 +96,11 @@
   <p>L'automatisation concerne les listes sélectionnées. Elle recherche périodiquement leurs
   modifications lorsque l'application est ouverte et peut utiliser une tâche Android en
   arrière-plan sur un réseau non facturé. Sa cadence dépend du système. Vous pouvez la désactiver
-  dans les réglages. Elle n'envoie pas de notification de synchronisation ou de promotion.</p>
+  dans les réglages. Elle n'envoie pas de notification de synchronisation ou de promotion.
+  Une nouvelle liste créée sur Android reste locale tant que vous ne la créez ou ne l'associez
+  pas explicitement sur pCloud.</p>
 
-  <h2>Modes par dossiers et liens — versions 0.4 et 0.5.2</h2>
+  <h2>Modes historiques par dossiers et liens — conservés en 0.7.0</h2>
   <p>Les révisions de listes au format Rhythmbox sont chiffrées AES-256-GCM avant écriture dans
   le dossier d'échange, avec la clé partagée entre vos appareils associés. Cette clé n'est pas
   incluse dans les révisions synchronisées. Le fichier d'association qui contient la clé doit
@@ -120,10 +122,96 @@
   <p>Pour un morceau issu du compte musical, le client vérifie son appartenance au dossier choisi
   et récupère le média original auprès d'un hôte HTTPS validé. Le jeton de compte n'est pas envoyé
   à l'hôte de téléchargement. Les morceaux locaux utilisent le dossier Android autorisé.</p>
-  <p>Les médias sont préparés dans un cache privé, avec une limite de 256 Mio par fichier.
+  <p>Le compte musical pCloud utilise un cache privé de 512 Mio au total, limité à 256 Mio par fichier.
+  Le client peut préparer automatiquement le morceau suivant et réutiliser les originaux encore
+  valides, sans nouvel appel pCloud ou CDN lors d'un hit de cache. Les copies et leurs reçus sont
+  liés à la région, au compte, au dossier musical, au fichier, au chemin et à sa version connue.
+  Un nouvel index vérifié signalant un changement, un déplacement ou une suppression invalide
+  l'ancienne copie. Les reçus ne conservent ni jeton ni adresse de téléchargement temporaire.
+  Les modes locaux et par liens gardent leur préparation de lecture distincte.</p>
+  <p>Le lecteur natif décode les formats pris en charge en PCM mono ou stéréo. Le réglage
+  facultatif d'uniformisation applique un gain de lecture sans réécrire les originaux ; son
+  cache privé conserve des mesures. L'analyseur gauche/droite représente le signal source
+  de ce lecteur, sans enregistrer le microphone ni capter la sortie globale du téléphone.
+  Un format utilisant le lecteur Android de repli peut être lu avec un analyseur indisponible.
   La piste audio d'une vidéo peut être lue sans afficher l'image si son codec est disponible.
   La MediaSession transmet à Android le titre, l'artiste et l'état de lecture pour les commandes
   multimédias. La notification de lecture permet de commander et d'arrêter le service audio.</p>
+
+  <h2>Copies audio hors connexion — depuis la version 0.7.0</h2>
+  <p>Vous choisissez explicitement les listes pCloud à conserver sur le téléphone. Seules les
+  listes liées au compte musical et à son dossier autorisent ces copies ; les titres masqués,
+  en quarantaine, de démonstration et Suno sont exclus. Les demandes de téléchargement révèlent
+  à pCloud les ressources choisies et le moment des demandes. La synchronisation des copies
+  peut reprendre les changements de ces listes sur un réseau non facturé, selon les réglages
+  et la disponibilité du travail d'arrière-plan Android.</p>
+  <p>Sous Android 10/API 29 et ultérieur, les octets originaux sont copiés avec MediaStore Audio
+  dans <strong>Music/Rhythmbox/</strong>, avec les sous-dossiers d'artistes et d'albums. Ce parcours
+  n'utilise pas de sélecteur de dossier ni de permission générale sur vos fichiers. Sous
+  Android 8–9/API 26–28, le repli utilise le dossier externe Musique propre à l'application,
+  dans Rhythmbox ; il ne crée pas le même dossier public.</p>
+  <p>Les copies ne sont ni converties ni normalisées sur disque. Leurs octets sont relus et
+  vérifiés par SHA-256 avant publication. Les fichiers déjà présents ne sont pas remplacés ;
+  une collision produit un nom supplémentaire tel que <strong>Titre (2).flac</strong>.
+  Les vidéos ou formats sans attestation audio sont indiqués comme non copiés et conservent
+  leur parcours de lecture habituel. Un journal privé contient l'identité du morceau, sa version,
+  son empreinte et l'emplacement de la nouvelle copie pour reprendre fichier par fichier.</p>
+  <p>Une annulation conserve les copies terminées. Le nettoyage automatique est limité aux
+  copies temporaires identifiées par ce journal et appartenant à l'application ; il ne supprime
+  pas les morceaux déjà publiés ou vos autres fichiers. Désactiver cette synchronisation ne
+  supprime pas les copies publiées. Les morceaux publics sous Music/Rhythmbox peuvent être
+  gérés dans votre application de fichiers ou de musique ; ils sont distincts du cache privé.</p>
+
+  <h2>Pilotage local de Spotify — depuis la version 0.6.0</h2>
+  <p>Cette fonction facultative commande l'application Spotify installée sur le même téléphone.
+  Vous choisissez les morceaux dans Spotify ; Rhythmbox affiche les métadonnées et la pochette
+  que sa session multimédia fournit et propose ses commandes de lecture disponibles.
+  Rhythmbox ne demande ni identifiant de connexion Spotify ni jeton de compte et n'utilise
+  pas l'API web de Spotify. Son contrôleur ne transmet pas ces métadonnées à pCloud ou à l'éditeur.
+  L'application Spotify assure ses propres connexions et traitements selon ses propres règles.
+  Son audio reste dans son lecteur : Rhythmbox ne l'analyse pas avec son analyseur stéréo,
+  ne lui applique pas l'uniformisation native et ne le copie pas dans le dossier hors connexion.</p>
+  <p>Pour obtenir ces commandes, Android exige l'<strong>accès aux notifications</strong>.
+  Il s'agit d'une autorisation système globale, pas d'une autorisation limitée à Spotify.
+  Rhythmbox explique cette portée avant d'ouvrir les réglages ; vous choisissez vous-même
+  de l'activer et pouvez la retirer à tout moment dans les réglages Android.</p>
+  <p>Rhythmbox utilise cet accès pour l'API des sessions multimédias, puis ne traite que la
+  session de l'application <code>com.spotify.music</code> du même utilisateur Android.
+  Il ne consulte, n'enregistre ni ne transmet le contenu des notifications, leur historique
+  ou leur classement. À partir d'Android 12 (API 31), sa configuration demande en outre au
+  système de désactiver la transmission de tous les types de notifications à son service.
+  Sur les versions antérieures, le système peut transmettre des notifications au service ;
+  Rhythmbox les ignore. Cette limitation du traitement par l'application ne change pas la
+  portée globale de l'autorisation Android.</p>
+  <p>Les titres, artistes, albums, pochettes et états de lecture utilisés par le contrôleur
+  restent en mémoire pendant son utilisation. Fermer l'interface retire ses observateurs ;
+  cela ne ferme ni ne déconnecte l'application Spotify indépendante.</p>
+
+  <h2>Catalogues publics et lecture Suno — depuis la version 0.6.0</h2>
+  <p>Vous pouvez ajouter un lien officiel de morceau, de playlist publique ou de partage Suno.
+  Un texte partagé depuis une autre application ouvre un formulaire de vérification : aucun
+  catalogue n'est récupéré avant votre validation. Rhythmbox demande ensuite les pages publiques
+  nécessaires pour identifier les morceaux, sans exécuter le JavaScript de ces pages et sans
+  lire les cookies, la session ou l'historique de votre navigateur.</p>
+  <p>Les noms, informations musicales, adresses de pochettes et références de lecture sont
+  conservés dans un catalogue privé du téléphone, distinct des listes et des identifiants pCloud.
+  Ce catalogue n'est pas envoyé à pCloud ou à l'éditeur. Il n'importe pas la bibliothèque privée
+  de votre compte Suno. Vous pouvez l'actualiser ou le retirer dans l'onglet Services ; le retirer
+  ne supprime pas les morceaux chez Suno.</p>
+  <p>Lors de la lecture, le client demande le média reconnu à son hôte HTTPS et, lorsque le
+  flux l'exige, les droits invité ordinaires auprès de Suno, avec l'identifiant du morceau.
+  Aucun cookie ou identifiant de compte Suno n'est fourni. Un refus de droits arrête la lecture ;
+  Rhythmbox ne demande ni achat, ni déblocage payant, ni utilisation de crédit Suno.</p>
+  <p>Le tampon audio, l'autorisation temporaire de lecture et les clés éventuelles restent en
+  mémoire pendant la lecture, sans création de fichier audio dans le stockage du téléphone.
+  Le catalogue ne conserve pas ces clés ou autorisations. Le moteur fournit uniquement la piste
+  audio au lecteur Android, sans surface vidéo. Il ne propose pas de téléchargement hors ligne
+  de ces morceaux.</p>
+  <p>Suno et les hôtes de ses médias et pochettes reçoivent les demandes techniques nécessaires :
+  ressource demandée, identifiant musical lorsqu'il est requis, adresse IP et moment de la demande.
+  Ces fournisseurs peuvent conserver leurs propres traces selon leurs règles ; Rhythmbox ne fixe
+  pas cette conservation. Les connexions du client sont chiffrées HTTPS. Aucun serveur de l'éditeur
+  ne reçoit vos liens, votre catalogue ou votre audio.</p>
 
   <h2>Mise à l'écart, déconnexion et effacement</h2>
   <p>La mise à l'écart masque les titres sur le téléphone et exclut leurs références des échanges
@@ -134,7 +222,12 @@
   <p>La déconnexion retire l'autorisation locale de cette installation. Elle ne révoque pas
   automatiquement le jeton distant et ne déconnecte pas les autres applications. Les listes
   locales, caches et bases de comparaison peuvent subsister. Vous pouvez effacer les données
-  de Rhythmbox dans les réglages Android ou désinstaller l'application pour retirer ses données locales.</p>
+  de Rhythmbox dans les réglages Android ou désinstaller l'application pour retirer ses données locales,
+  y compris le catalogue Suno. Les copies musicales publiques déjà publiées dans Music/Rhythmbox
+  restent distinctes de ces données privées et leur suppression n'est pas automatisée par Rhythmbox.
+  Le dossier externe propre à l'application utilisé sous Android 8–9 est supprimé lors de sa
+  désinstallation. L'autorisation de pilotage Spotify peut être retirée séparément dans
+  les réglages Android ; elle ne constitue pas une connexion à votre compte Spotify.</p>
   <p>Les fichiers d'association exportés, les morceaux d'origine et les listes ou révisions déjà
   conservés chez votre fournisseur ne sont pas effacés par cette action. Leur gestion et la
   révocation distante relèvent de votre compte pCloud. Rhythmbox ne crée pas de compte hébergé
@@ -145,9 +238,10 @@
   et leur hébergeur peuvent recevoir les informations techniques de la visite. Rhythmbox ne lit
   pas votre historique de navigation. Le code source du client libre est présenté sur la
   <a href="https://lemegageek.github.io/rhythmbox/sources.html">page Sources</a>.
+  Les archives de sources sont accompagnées de leurs empreintes de vérification.
   Cette politique est mise à jour lorsque les traitements décrits évoluent.</p>
 </main>
-<footer><small>Cette page décrit les fonctions de Rhythmbox Musique selon leur version,
+<footer><small>Cette page décrit les traitements du client selon leur version,
 et non l'ensemble des traitements des services tiers que vous choisissez.</small></footer>
 </body>
 </html>
