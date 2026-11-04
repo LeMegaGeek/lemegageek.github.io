@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Sources Android — Rhythmbox Musique</title>
-<meta name="description" content="Sources GPL de Rhythmbox Musique : version 0.7.0 et archives des versions précédentes, outils de compilation et empreintes.">
+<meta name="description" content="Sources de Rhythmbox Musique : version 0.8.2 et archives des versions précédentes, outils de compilation et empreintes.">
 <link rel="canonical" href="https://lemegageek.github.io/rhythmbox/sources.html">
 <style>
 :root{color-scheme:dark;--bg:#10151e;--panel:#1c2635;--text:#f3f7fd;--muted:#b4c3d7;--accent:#72e1bb;font-family:system-ui,sans-serif;line-height:1.65}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text)}header,main,footer{width:min(100% - 2.5rem,56rem);margin-inline:auto}header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;padding-block:1.5rem;border-bottom:1px solid #35465d}header strong{font-size:1.2rem}a{color:var(--accent);text-underline-offset:.2em}a:focus-visible{outline:3px solid var(--accent);outline-offset:5px}main{padding-block:2.5rem 3.5rem}h1,h2{line-height:1.2;letter-spacing:-.035em}h1{font-size:clamp(2.1rem,6vw,3.4rem);margin:.5rem 0 1rem}h2{font-size:1.45rem;margin-top:2rem}p,li{color:var(--muted);max-width:72ch}.status{padding:.8rem 1rem;background:var(--panel);border-left:3px solid var(--accent)}.button{display:inline-block;margin-block:1rem;padding:.8rem 1.1rem;border-radius:.8rem;background:var(--accent);color:var(--bg);font-weight:700;text-decoration:none}code{overflow-wrap:anywhere;color:var(--text)}pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:1rem;background:var(--panel);border-radius:.8rem;font-size:.85rem}footer{border-top:1px solid #35465d;padding-block:1.5rem 2.5rem;color:var(--muted);font-size:.85rem}.eyebrow{font-size:.85rem;color:var(--accent);font-weight:700}
@@ -14,8 +14,20 @@
 <main>
 <p class="eyebrow">ANDROID · LOGICIEL LIBRE</p>
 <h1>Le code de votre lecteur.</h1>
-<p class="status"><strong>Sources de Rhythmbox Musique 0.7.0, code 14.</strong> Les archives et empreintes des versions précédentes restent accessibles ci-dessous. La disponibilité d’une mise à jour en test fermé dépend de sa validation par Google Play.</p>
-<h2>Version 0.7.0, code 14</h2>
+<p class="status"><strong>Sources de Rhythmbox Musique 0.8.2, code 17.</strong> Les archives des versions précédentes restent accessibles ci-dessous. La disponibilité de cette mise à jour dépend de sa diffusion sur Google Play.</p>
+<h2>Version 0.8.2, code 17</h2>
+<p>Cette version pilote l’application Spotify officielle avec le SDK App Remote 0.8.0, sans accès Android aux notifications. Les commandes du lecteur suivent les capacités annoncées par Spotify ; le titre et la pochette proviennent du SDK. Le passage entre Spotify et le lecteur natif suspend le lecteur précédent lorsque Rhythmbox est actif.</p>
+<p>La bibliothèque, les listes pCloud, le cache privé et les copies audio dans Music/Rhythmbox restent disponibles. L’analyseur PCM natif pour la bibliothèque, pCloud et Suno corrige les bandes de basses fréquences. L’audio Spotify reste dans son lecteur et n’est pas analysé par Rhythmbox Android.</p>
+<p><a class="button" href="/downloads/rhythmbox/0.8.2/rhythmbox-android-0.8.2-sources.tar.gz">Télécharger les sources de 0.8.2</a></p>
+<p><a href="/downloads/rhythmbox/0.8.2/rhythmbox-android-0.8.2-sources.tar.gz.sha256">Empreinte SHA-256 correspondante</a></p>
+<pre>SHA-256 sources : efd9f2ffbd4dd8d2ce80c2ba7c7f31f2c8e961c50219c5656d5ee0dc6e97807a</pre>
+<p>Bundle Android signé correspondant, avant les transformations éventuelles de Google Play :</p>
+<pre>e2c3460b3d92490b973c9a9492b5f9f05efed03f330de4817ec28ebdaa48d46f</pre>
+<pre>sha256sum --check rhythmbox-android-0.8.2-sources.tar.gz.sha256</pre>
+<p>L’archive fournit nos sources, ressources, tests, scripts de compilation et le verrou des dépendances officielles. Elle exclut les clés de signature, secrets et données personnelles. Commencez par <code>Rythmbox/android/README.md</code>, <code>Rythmbox/android/RELEASE.md</code> et <code>Rythmbox/android/SPOTIFY-APP-REMOTE.md</code>.</p>
+<p>Le code original du projet est sous GPL-2.0-or-later. Le SDK binaire Spotify App Remote et Gson ont leurs propres licences et notices, reproduites dans les assets et accessibles dans les réglages. L’archive contient le script vérifié de récupération du SDK officiel ; elle ne prétend pas fournir ses sources internes ni le reconditionner sous GPL.</p>
+<p>L’accès Spotify reste soumis au mode Développement de l’enregistrement et aux utilisateurs autorisés. Le parcours initial d’un nouvel utilisateur non préautorisé n’est pas validé par les essais du compte de test. Les essais physiques documentés sur la version précédente 0.8.1 concernent l’APK debug ; ils ne prouvent pas une installation distribuée par Google Play. Les preuves propres au candidat 0.8.2 sont contrôlées avant diffusion.</p>
+<h2>Archive : version 0.7.0, code 14</h2>
 <p>Cette version comprend la connexion facultative au compte musical pCloud, les listes natives sélectionnées, le cache privé de 512 Mio, la préparation du morceau suivant et les copies audio choisies dans Music/Rhythmbox sous Android 10 et ultérieur. Le lecteur natif propose un analyseur mono ou stéréo du signal source, sans microphone.</p>
 <a class="button" href="/downloads/rhythmbox/0.7.0/rhythmbox-android-0.7.0-sources.tar.gz">Télécharger les sources GPL de 0.7.0</a>
 <p><a href="/downloads/rhythmbox/0.7.0/rhythmbox-android-0.7.0-sources.tar.gz.sha256">Empreinte SHA-256 correspondante</a></p>
@@ -25,7 +37,7 @@
 <p>L’archive contient 152 fichiers : sources, ressources, licence et outils de construction. Les clés de signature et données personnelles d’exécution sont exclues. Commencez par Rythmbox/android/README.md et Rythmbox/android/RELEASE.md.</p>
 <pre>sha256sum --check rhythmbox-android-0.7.0-sources.tar.gz.sha256</pre>
 <p>Les 66 entrées principales du candidat signé correspondent à la révision testée sur le Motorola Android 16 sous LineageOS. Les essais ont vérifié la lecture PCM, les copies originales de deux morceaux, leur réutilisation sans doublon et la lecture depuis ces copies avec le réseau laissé activé. Ils ne constituent pas un essai global en mode avion ni un essai physique Android 8–9.</p>
-<p>Le pilotage Spotify nécessite son application et un accès Android facultatif aux notifications ; son audio n’est pas analysé par le lecteur natif. Suno lit les liens publics autorisés sans importer une bibliothèque privée ni créer de copie audio hors ligne.</p>
+<p>Dans cette ancienne version 0.7.0, le pilotage Spotify utilisait un accès Android facultatif aux notifications. Ce parcours a été remplacé par App Remote à partir de la version 0.8 ; l’audio Spotify reste hors du lecteur natif. Suno lit les liens publics autorisés sans importer une bibliothèque privée ni créer de copie audio hors ligne.</p>
 <h2>Candidat 0.5.2, code 7 — non diffusé</h2>
 <p>Ce candidat utilise la page officielle pCloud et corrige le traitement du réseau et de la reprise. Les contrôles isolés ne prouvent pas sa connexion au compte musical réel ni une synchronisation complète dans les deux sens.</p>
 <p><a href="/downloads/rhythmbox/0.5.2/rhythmbox-android-0.5.2-sources.tar.gz">Sources du candidat 0.5.2</a> · <a href="/downloads/rhythmbox/0.5.2/rhythmbox-android-0.5.2-sources.tar.gz.sha256">Empreinte SHA-256 correspondante</a></p>
@@ -60,7 +72,7 @@
 <h2>Assistance</h2>
 <p>Pour une question sur l’application ou vos données : <a href="mailto:support-cacam@chey.net">support-cacam@chey.net</a>.</p>
 </main>
-<footer>LeMegaGeek · Client Android indépendant, sans affiliation avec GNOME ou pCloud. Mise à jour du 3 novembre 2026.</footer>
+<footer>LeMegaGeek · Client Android indépendant, sans affiliation avec GNOME ou pCloud. Mise à jour du 4 novembre 2026.</footer>
 </body>
 </html>
 

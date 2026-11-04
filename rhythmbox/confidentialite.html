@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Brouillon 0.7.0 — Confidentialité Rhythmbox Musique</title>
+  <title>Confidentialité 0.8.2 — Rhythmbox Musique</title>
   <link rel="canonical" href="https://lemegageek.github.io/rhythmbox/confidentialite.html">
   <style>
     :root { color-scheme: light dark; font-family: system-ui, sans-serif; line-height: 1.65; }
@@ -18,8 +18,8 @@
   <nav aria-label="Rhythmbox pour Android"><a href="index.html">Android</a> · <a href="confidentialite.html" aria-current="page">Confidentialité</a> · <a href="sources.html">Sources</a></nav>
   <p>Rhythmbox Musique pour Android</p>
   <h1>Politique de confidentialité</h1>
-  <p>Mise à jour du 3 novembre 2026. Ce texte décrit les fonctions disponibles selon
-  votre version de Rhythmbox Musique, jusqu’à la version 0.7.0 (code 14) : compte musical
+  <p>Mise à jour du 4 novembre 2026. Ce texte décrit les fonctions disponibles selon
+  votre version de Rhythmbox Musique, jusqu’à la version 0.8.2 (code 17) : compte musical
   pCloud, listes natives, cache privé, copies audio choisies, lecteur PCM, Spotify et Suno.
   Les versions historiques conservent leurs parcours par dossiers et liens.</p>
 </header>
@@ -100,7 +100,7 @@
   Une nouvelle liste créée sur Android reste locale tant que vous ne la créez ou ne l'associez
   pas explicitement sur pCloud.</p>
 
-  <h2>Modes historiques par dossiers et liens — conservés en 0.7.0</h2>
+  <h2>Modes historiques par dossiers et liens — conservés en 0.8.2</h2>
   <p>Les révisions de listes au format Rhythmbox sont chiffrées AES-256-GCM avant écriture dans
   le dossier d'échange, avec la clé partagée entre vos appareils associés. Cette clé n'est pas
   incluse dans les révisions synchronisées. Le fichier d'association qui contient la clé doit
@@ -162,30 +162,42 @@
   supprime pas les copies publiées. Les morceaux publics sous Music/Rhythmbox peuvent être
   gérés dans votre application de fichiers ou de musique ; ils sont distincts du cache privé.</p>
 
-  <h2>Pilotage local de Spotify — depuis la version 0.6.0</h2>
-  <p>Cette fonction facultative commande l'application Spotify installée sur le même téléphone.
-  Vous choisissez les morceaux dans Spotify ; Rhythmbox affiche les métadonnées et la pochette
-  que sa session multimédia fournit et propose ses commandes de lecture disponibles.
-  Rhythmbox ne demande ni identifiant de connexion Spotify ni jeton de compte et n'utilise
-  pas l'API web de Spotify. Son contrôleur ne transmet pas ces métadonnées à pCloud ou à l'éditeur.
-  L'application Spotify assure ses propres connexions et traitements selon ses propres règles.
-  Son audio reste dans son lecteur : Rhythmbox ne l'analyse pas avec son analyseur stéréo,
-  ne lui applique pas l'uniformisation native et ne le copie pas dans le dossier hors connexion.</p>
-  <p>Pour obtenir ces commandes, Android exige l'<strong>accès aux notifications</strong>.
-  Il s'agit d'une autorisation système globale, pas d'une autorisation limitée à Spotify.
-  Rhythmbox explique cette portée avant d'ouvrir les réglages ; vous choisissez vous-même
-  de l'activer et pouvez la retirer à tout moment dans les réglages Android.</p>
-  <p>Rhythmbox utilise cet accès pour l'API des sessions multimédias, puis ne traite que la
-  session de l'application <code>com.spotify.music</code> du même utilisateur Android.
-  Il ne consulte, n'enregistre ni ne transmet le contenu des notifications, leur historique
-  ou leur classement. À partir d'Android 12 (API 31), sa configuration demande en outre au
-  système de désactiver la transmission de tous les types de notifications à son service.
-  Sur les versions antérieures, le système peut transmettre des notifications au service ;
-  Rhythmbox les ignore. Cette limitation du traitement par l'application ne change pas la
-  portée globale de l'autorisation Android.</p>
-  <p>Les titres, artistes, albums, pochettes et états de lecture utilisés par le contrôleur
-  restent en mémoire pendant son utilisation. Fermer l'interface retire ses observateurs ;
-  cela ne ferme ni ne déconnecte l'application Spotify indépendante.</p>
+  <h2>Spotify avec le SDK officiel App Remote — depuis la version 0.8</h2>
+  <p>Cette fonction facultative pilote l'application Spotify officielle installée sur le même
+  téléphone, avec le SDK Spotify App Remote 0.8.0. Vous autorisez Rhythmbox auprès de Spotify.
+  Le client transmet l'identifiant public de l'application et sa redirection au SDK pour cette
+  liaison ; il ne présente pas de formulaire de mot de passe Spotify et ne demande aucun
+  Client Secret. La connexion ou un consentement complémentaire peuvent nécessiter la page
+  officielle Spotify. Les conditions d'accès au service et les utilisateurs autorisés dépendent
+  de Spotify ; l'enregistrement de Rhythmbox reste en mode Développement.</p>
+  <p>Vous pouvez choisir la musique dans Spotify ou fournir dans Rhythmbox un lien officiel de
+  morceau, album, artiste ou playlist. Les références musicales validées et les commandes de
+  lecture sont transmises au lecteur officiel. Le SDK fournit le titre, l'artiste, l'album,
+  la position, l'état de lecture, les commandes disponibles et la pochette. Rhythmbox les
+  conserve en mémoire pendant l'utilisation ; il ne les envoie pas à pCloud ou à l'éditeur.
+  Ce parcours Android n'utilise pas l'API web Spotify pour importer vos playlists.</p>
+  <p><strong>Aucun accès Android aux notifications n'est demandé pour Spotify.</strong>
+  Le contrôleur n'utilise plus le service historique de lecture des sessions multimédias par
+  accès aux notifications. La liaison actuelle passe par App Remote. Spotify assure ses
+  propres connexions, son cache, les téléchargements et ses traitements selon ses propres
+  <a href="https://www.spotify.com/legal/privacy-policy/">règles de confidentialité</a>.</p>
+  <p>Rhythmbox conserve localement le choix d'activer la liaison et l'identifiant public
+  d'application. Une réouverture tente une reconnexion silencieuse ; un refus exige une
+  nouvelle connexion explicite. Le SDK et Spotify gèrent l'autorisation de leur liaison.
+  Fermer l'interface retire les observateurs et déconnecte le SDK sans fermer Spotify ni lui
+  envoyer automatiquement une pause. Spotify peut continuer à lire indépendamment.
+  « Déconnecter Spotify » désactive la reconnexion locale ; la révocation de l'autorisation
+  distante se fait depuis votre compte Spotify.</p>
+  <p>Lorsque l'interface Rhythmbox est active, le passage d'un lecteur à l'autre suspend le
+  lecteur précédent. Le démarrage d'un titre natif attend un nouvel état confirmant la pause
+  Spotify. Ce mécanisme ne surveille pas Spotify en permanence lorsque l'interface est fermée.</p>
+  <p>L'audio Spotify reste dans son lecteur officiel : App Remote ne fournit pas son signal PCM
+  à Rhythmbox. L'analyseur stéréo et l'uniformisation native ne s'appliquent donc pas à Spotify,
+  et aucun morceau Spotify n'est copié dans le dossier hors connexion. Le lecteur natif,
+  pCloud et Suno conservent leur propre analyseur du signal source.</p>
+  <p>Le SDK officiel et Gson 2.11.0 sont livrés avec leurs licences et notices, consultables dans
+  « Réglages → Licences Spotify SDK et Gson ». Ces composants et les conditions du service
+  Spotify restent distincts de la licence du code original de Rhythmbox.</p>
 
   <h2>Catalogues publics et lecture Suno — depuis la version 0.6.0</h2>
   <p>Vous pouvez ajouter un lien officiel de morceau, de playlist publique ou de partage Suno.
@@ -226,8 +238,8 @@
   y compris le catalogue Suno. Les copies musicales publiques déjà publiées dans Music/Rhythmbox
   restent distinctes de ces données privées et leur suppression n'est pas automatisée par Rhythmbox.
   Le dossier externe propre à l'application utilisé sous Android 8–9 est supprimé lors de sa
-  désinstallation. L'autorisation de pilotage Spotify peut être retirée séparément dans
-  les réglages Android ; elle ne constitue pas une connexion à votre compte Spotify.</p>
+  désinstallation. Pour Spotify, la déconnexion locale désactive App Remote dans Rhythmbox ;
+  vous pouvez aussi révoquer l'accès depuis les applications autorisées de votre compte Spotify.</p>
   <p>Les fichiers d'association exportés, les morceaux d'origine et les listes ou révisions déjà
   conservés chez votre fournisseur ne sont pas effacés par cette action. Leur gestion et la
   révocation distante relèvent de votre compte pCloud. Rhythmbox ne crée pas de compte hébergé
