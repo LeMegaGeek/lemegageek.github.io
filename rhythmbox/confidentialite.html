@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Confidentialité 0.8.2 — Rhythmbox Musique</title>
+  <title>Confidentialité 0.9.0 — Rhythmbox Musique</title>
   <link rel="canonical" href="https://lemegageek.github.io/rhythmbox/confidentialite.html">
   <style>
     :root { color-scheme: light dark; font-family: system-ui, sans-serif; line-height: 1.65; }
@@ -15,15 +15,18 @@
 </head>
 <body>
 <header>
-  <nav aria-label="Rhythmbox pour Android"><a href="index.html">Android</a> · <a href="confidentialite.html" aria-current="page">Confidentialité</a> · <a href="sources.html">Sources</a></nav>
+  <nav aria-label="Rhythmbox pour Android"><a href="/fr/rhythmbox/">Android</a> · <a href="confidentialite.html" aria-current="page">Confidentialité</a> · <a href="sources.html">Sources</a></nav>
   <p>Rhythmbox Musique pour Android</p>
   <h1>Politique de confidentialité</h1>
   <p>Mise à jour du 4 novembre 2026. Ce texte décrit les fonctions disponibles selon
-  votre version de Rhythmbox Musique, jusqu’à la version 0.8.2 (code 17) : compte musical
+  votre version de Rhythmbox Musique, jusqu’à la version 0.9.0 (code 18) : compte musical
   pCloud, listes natives, cache privé, copies audio choisies, lecteur PCM, Spotify et Suno.
   Les versions historiques conservent leurs parcours par dossiers et liens.</p>
 </header>
 <main>
+  <h2>Édition LeMegaGeek et données de l’ancienne installation</h2>
+  <p>L’application affichée comme « Rhythmbox LeMegaGeek » dans le lanceur, édition 0.9.0, utilise l’identifiant Android <code>fr.lemegageek.rhythmbox</code> et un stockage d’application distinct. Elle s’installe à côté de l’ancienne application, qui conserve ses données. Les comptes, autorisations, listes et caches privés ne sont pas copiés automatiquement entre les deux installations ; vous reconnectez les services souhaités dans la nouvelle application.</p>
+
   <h2>Éditeur et contact</h2>
   <p>Rhythmbox Musique est un logiciel libre indépendant proposé par LeMegaGeek.
   Pour une question sur l'application ou vos données, écrivez à
@@ -199,6 +202,12 @@
   « Réglages → Licences Spotify SDK et Gson ». Ces composants et les conditions du service
   Spotify restent distincts de la licence du code original de Rhythmbox.</p>
 
+  <h2>Connexion Suno dans le navigateur — édition 0.9.0</h2>
+  <p>Dans Services, « Me connecter à Suno… », « Ma bibliothèque Suno » et « Mes playlists Suno » ouvrent la page officielle correspondante dans un Custom Tab, un onglet fourni par votre navigateur Android. Vous pouvez choisir Google ou la méthode de connexion habituelle de votre compte sur la page officielle Suno. Le navigateur exécute cette page et conserve sa session selon ses propres réglages ; Suno et, si vous le choisissez, Google assurent l’authentification selon leurs règles.</p>
+  <p>Rhythmbox ne lit pas les cookies, mots de passe, codes Google ni jetons privés de cette session. Le client n’affiche pas un état de compte Suno connecté déduit de la seule ouverture du navigateur.</p>
+  <p>Lorsque vous touchez explicitement « Écouter dans Rhythmbox » dans la barre du navigateur, celui-ci transmet seulement l’adresse de la page courante à l’application par une action Android. Un identifiant privé de tentative, temporaire et conservé localement, relie ce retour à l’ouverture en cours ; il ne constitue pas un secret Google ou Suno. Le client vérifie l’adresse reçue et vous présente une confirmation avant toute récupération de catalogue. Une page de connexion, une page privée non partageable ou une adresse non reconnue ne devient pas automatiquement un catalogue musical.</p>
+  <p>Ce parcours permet de choisir visuellement un morceau ou une playlist partageable ; il ne recopie pas toute la bibliothèque privée, les favoris privés ou l’historique du compte. L’adresse et les métadonnées de la sélection confirmée suivent ensuite le traitement de catalogue décrit ci-dessous. La saisie d’un lien dans les options avancées et le partage Android vers Rhythmbox restent des parcours supplémentaires.</p>
+
   <h2>Catalogues publics et lecture Suno — depuis la version 0.6.0</h2>
   <p>Vous pouvez ajouter un lien officiel de morceau, de playlist publique ou de partage Suno.
   Un texte partagé depuis une autre application ouvre un formulaire de vérification : aucun
@@ -257,3 +266,4 @@
 et non l'ensemble des traitements des services tiers que vous choisissez.</small></footer>
 </body>
 </html>
+
