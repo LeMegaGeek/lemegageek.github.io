@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Confidentialité 0.9.0 — Rhythmbox Musique</title>
+  <title>Confidentialité 0.10.0 — Rhythmbox Musique</title>
   <link rel="canonical" href="https://lemegageek.github.io/rhythmbox/confidentialite.html">
   <style>
     :root { color-scheme: light dark; font-family: system-ui, sans-serif; line-height: 1.65; }
@@ -18,14 +18,14 @@
   <nav aria-label="Rhythmbox pour Android"><a href="/fr/rhythmbox/">Android</a> · <a href="confidentialite.html" aria-current="page">Confidentialité</a> · <a href="sources.html">Sources</a></nav>
   <p>Rhythmbox Musique pour Android</p>
   <h1>Politique de confidentialité</h1>
-  <p>Mise à jour du 4 novembre 2026. Ce texte décrit les fonctions disponibles selon
-  votre version de Rhythmbox Musique, jusqu’à la version 0.9.0 (code 18) : compte musical
+  <p>Mise à jour du 5 novembre 2026. Ce texte décrit les fonctions disponibles selon
+  votre version de Rhythmbox Musique, jusqu’à la version 0.10.0 (code 19) : compte musical
   pCloud, listes natives, cache privé, copies audio choisies, lecteur PCM, Spotify et Suno.
   Les versions historiques conservent leurs parcours par dossiers et liens.</p>
 </header>
 <main>
   <h2>Édition LeMegaGeek et données de l’ancienne installation</h2>
-  <p>L’application affichée comme « Rhythmbox LeMegaGeek » dans le lanceur, édition 0.9.0, utilise l’identifiant Android <code>fr.lemegageek.rhythmbox</code> et un stockage d’application distinct. Elle s’installe à côté de l’ancienne application, qui conserve ses données. Les comptes, autorisations, listes et caches privés ne sont pas copiés automatiquement entre les deux installations ; vous reconnectez les services souhaités dans la nouvelle application.</p>
+  <p>L’application affichée comme « Rhythmbox LeMegaGeek » dans le lanceur, depuis la version 0.9.0, utilise l’identifiant Android <code>fr.lemegageek.rhythmbox</code> et un stockage d’application distinct. Elle s’installe à côté de l’ancienne application, qui conserve ses données. Les comptes, autorisations, listes et caches privés ne sont pas copiés automatiquement entre les deux installations ; vous reconnectez les services souhaités dans la nouvelle application.</p>
 
   <h2>Éditeur et contact</h2>
   <p>Rhythmbox Musique est un logiciel libre indépendant proposé par LeMegaGeek.
@@ -178,7 +178,7 @@
   lecture sont transmises au lecteur officiel. Le SDK fournit le titre, l'artiste, l'album,
   la position, l'état de lecture, les commandes disponibles et la pochette. Rhythmbox les
   conserve en mémoire pendant l'utilisation ; il ne les envoie pas à pCloud ou à l'éditeur.
-  Ce parcours Android n'utilise pas l'API web Spotify pour importer vos playlists.</p>
+  Le pilotage App Remote et la consultation de votre bibliothèque sont autorisés séparément.</p>
   <p><strong>Aucun accès Android aux notifications n'est demandé pour Spotify.</strong>
   Le contrôleur n'utilise plus le service historique de lecture des sessions multimédias par
   accès aux notifications. La liaison actuelle passe par App Remote. Spotify assure ses
@@ -202,11 +202,16 @@
   « Réglages → Licences Spotify SDK et Gson ». Ces composants et les conditions du service
   Spotify restent distincts de la licence du code original de Rhythmbox.</p>
 
-  <h2>Connexion Suno dans le navigateur — édition 0.9.0</h2>
-  <p>Dans Services, « Me connecter à Suno… », « Ma bibliothèque Suno » et « Mes playlists Suno » ouvrent la page officielle correspondante dans un Custom Tab, un onglet fourni par votre navigateur Android. Vous pouvez choisir Google ou la méthode de connexion habituelle de votre compte sur la page officielle Suno. Le navigateur exécute cette page et conserve sa session selon ses propres réglages ; Suno et, si vous le choisissez, Google assurent l’authentification selon leurs règles.</p>
+  <h2>Bibliothèque Spotify dans Lecture</h2>
+  <p>Depuis la version 0.10.0, Rhythmbox peut demander la lecture de vos titres aimés, albums et playlists, y compris privées ou collaboratives. Avec votre accord, l’application envoie directement à Spotify les requêtes de consultation, les termes de recherche et les identifiants des éléments demandés. Les réponses servent à afficher vos sélections. Le compte musical pCloud ne reçoit pas ces requêtes ni ces listes.</p>
+  <p>L’autorisation Spotify de lecture se fait par OAuth avec PKCE. Rhythmbox conserve ses jetons dans le stockage privé protégé par Android Keystore. Le retour HTTPS est associé à l’application. Si Android ouvre cette adresse dans le navigateur, GitHub Pages peut recevoir le code temporaire et l’état dans la requête HTTPS. La page retire ces paramètres de la barre d’adresse et propose le retour dans l’application. Seul le téléphone qui a commencé la connexion détient le vérificateur nécessaire pour utiliser le code.</p>
+  <p>Les accès peuvent être révoqués dans la liste des applications autorisées du compte Spotify.</p>
+
+  <h2>Connexion Suno dans le navigateur</h2>
+  <p>Depuis Lecture → Suno, l’ouverture de la bibliothèque affiche la page officielle dans votre navigateur Android. Les anciennes versions proposaient cette action dans Services. Vous pouvez choisir Google ou la méthode de connexion habituelle de votre compte sur la page officielle Suno. Le navigateur exécute cette page et conserve sa session selon ses propres réglages ; Suno et, si vous le choisissez, Google assurent l’authentification selon leurs règles.</p>
   <p>Rhythmbox ne lit pas les cookies, mots de passe, codes Google ni jetons privés de cette session. Le client n’affiche pas un état de compte Suno connecté déduit de la seule ouverture du navigateur.</p>
   <p>Lorsque vous touchez explicitement « Écouter dans Rhythmbox » dans la barre du navigateur, celui-ci transmet seulement l’adresse de la page courante à l’application par une action Android. Un identifiant privé de tentative, temporaire et conservé localement, relie ce retour à l’ouverture en cours ; il ne constitue pas un secret Google ou Suno. Le client vérifie l’adresse reçue et vous présente une confirmation avant toute récupération de catalogue. Une page de connexion, une page privée non partageable ou une adresse non reconnue ne devient pas automatiquement un catalogue musical.</p>
-  <p>Ce parcours permet de choisir visuellement un morceau ou une playlist partageable ; il ne recopie pas toute la bibliothèque privée, les favoris privés ou l’historique du compte. L’adresse et les métadonnées de la sélection confirmée suivent ensuite le traitement de catalogue décrit ci-dessous. La saisie d’un lien dans les options avancées et le partage Android vers Rhythmbox restent des parcours supplémentaires.</p>
+  <p>Ce parcours permet de choisir visuellement un morceau ou une playlist partageable ; il ne recopie pas toute la bibliothèque privée, les favoris privés ou l’historique du compte. L’adresse et les métadonnées de la sélection confirmée suivent ensuite le traitement de catalogue décrit ci-dessous. Le partage Android vers Rhythmbox transmet la page musicale sélectionnée.</p>
 
   <h2>Catalogues publics et lecture Suno — depuis la version 0.6.0</h2>
   <p>Vous pouvez ajouter un lien officiel de morceau, de playlist publique ou de partage Suno.
@@ -217,7 +222,7 @@
   <p>Les noms, informations musicales, adresses de pochettes et références de lecture sont
   conservés dans un catalogue privé du téléphone, distinct des listes et des identifiants pCloud.
   Ce catalogue n'est pas envoyé à pCloud ou à l'éditeur. Il n'importe pas la bibliothèque privée
-  de votre compte Suno. Vous pouvez l'actualiser ou le retirer dans l'onglet Services ; le retirer
+  de votre compte Suno. Vous pouvez le gérer sur le téléphone ; le retirer
   ne supprime pas les morceaux chez Suno.</p>
   <p>Lors de la lecture, le client demande le média reconnu à son hôte HTTPS et, lorsque le
   flux l'exige, les droits invité ordinaires auprès de Suno, avec l'identifiant du morceau.
