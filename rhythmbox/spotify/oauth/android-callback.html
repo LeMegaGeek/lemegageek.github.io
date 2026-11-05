@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'; script-src 'sha256-lPY8meEavGfoyEntEoYWKBdu8miMY2FAq/gtYaDFn9U='">
+<title>Revenir dans Rhythmbox</title>
+</head>
+<body>
+<main>
+<h1>Bibliothèque Spotify</h1>
+<p><a id="open" hidden>Revenir dans Rhythmbox</a></p>
+<p>Si l’application ne s’ouvre pas, active « Ouvrir les liens compatibles » dans les réglages Android de Rhythmbox LeMegaGeek, puis relance la connexion depuis Lecture.</p>
+</main>
+<script>const query = location.search;
+history.replaceState(null, "", location.pathname);
+const params = new URLSearchParams(query);
+const valid = /^[A-Za-z0-9_-]{43}$/.test(params.get("state") || "") &&
+  (params.has("code") !== params.has("error")) && query.length <= 16384;
+if (valid) {
+  const link = document.getElementById("open");
+  const auth = new URLSearchParams();
+  for (const key of ["state", "code", "error"]) if (params.has(key)) auth.set(key, params.get(key));
+  link.href = "intent://lemegageek.github.io/rhythmbox/spotify/oauth/android-callback.html?" + auth +
+    "#Intent;scheme=https;package=fr.lemegageek.rhythmbox;end";
+  link.hidden = false;
+}</script>
+</body>
+</html>
