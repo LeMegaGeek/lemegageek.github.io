@@ -7,16 +7,16 @@
 <body><header><a class="brand" href="/fr/?lang=fr"><img src="/assets/rhythmbox-icon-512.png" alt="" width="44" height="44" style="vertical-align:middle;margin-right:.5rem">Rhythmbox<span style="color:var(--accent)"> · Musique</span></a><nav aria-label="Rhythmbox pour Android"><a href="index.html" aria-current="page">Android</a><a href="/rhythmbox/confidentialite.html">Confidentialité</a><a href="/rhythmbox/sources.html">Sources</a></nav></header>
 <main><p class="eyebrow">Rhythmbox LeMegaGeek pour Android</p>
 <h1>Écouter depuis Rhythmbox</h1>
-<p class="lead">Ouvrez Lecture et choisissez Spotify, Suno, Sur ce téléphone ou pCloud. Pendant un morceau, « Changer de source » permet de parcourir les titres. Le lecteur change au démarrage du morceau choisi.</p>
-<div class="actions"><a class="button primary" href="/downloads/rhythmbox/0.10.0/rhythmbox-android-0.10.0.apk">Télécharger l’APK 0.10.0</a><a class="button" href="https://play.google.com/apps/internaltest/4700023660981821494">Google Play · Test interne</a></div>
+<p class="lead">Dans Lecture, choisissez Spotify ou Suno. Ouvrez une playlist, puis touchez Lire ou le titre souhaité. Vous pouvez consulter les autres listes pendant l’écoute.</p>
+<div class="actions"><a class="button primary" href="/downloads/rhythmbox/0.11.0/rhythmbox-android-0.11.0.apk">Télécharger l’APK 0.11.0</a><a class="button" href="https://play.google.com/apps/internaltest/4700023660981821494">Google Play · Test interne</a></div>
 <h2>Installation</h2>
-<p>Version 0.10.0, code 19, pour Android 8 et versions ultérieures. Ouvrez l’APK sur le téléphone ou utilisez le test interne avec le compte Google autorisé. Android met à jour la version LeMegaGeek 0.9.0 en conservant les données de cette installation.</p>
+<p>Version 0.11.0, code 21, pour Android 8 et versions ultérieures. Ouvrez l’APK sur le téléphone ou utilisez le test interne avec le compte Google autorisé. Android met à jour la version LeMegaGeek 0.10.0 en conservant les données de cette installation.</p>
 <p>L’identifiant Android est <code>fr.lemegageek.rhythmbox</code>. Les éditions historiques <code>fr.denis.rhythmbox</code> utilisent leur propre installation.</p>
-<p><a href="/downloads/rhythmbox/0.10.0/rhythmbox-android-0.10.0.apk.sha256">Empreinte SHA-256 de l’APK</a> · <a href="/rhythmbox/sources.html">Sources de la version 0.10.0</a> · <a href="/rhythmbox/confidentialite.html">Confidentialité</a></p>
+<p><a href="/downloads/rhythmbox/0.11.0/rhythmbox-android-0.11.0.apk.sha256">Empreinte SHA-256 de l’APK</a> · <a href="/rhythmbox/sources.html">Sources de la version 0.11.0</a> · <a href="/rhythmbox/confidentialite.html">Confidentialité</a></p>
 <h2>Spotify</h2>
-<p>Dans Lecture, touchez Spotify, puis « Connecter Spotify ». L’application Spotify officielle lit la musique sur le téléphone. L’accès en lecture seule à votre bibliothèque permet de parcourir vos titres aimés, albums et playlists et d’utiliser la recherche. La lecture d’un morceau précis dépend des possibilités du compte. En test, Spotify réserve l’accès à son API web aux comptes autorisés.</p>
+<p>Autorisez la consultation de votre bibliothèque pour voir vos playlists, vos titres aimés et vos albums. Lorsque vous lancez la lecture, Rhythmbox peut vous demander de vous connecter dans l’application Spotify officielle. Votre sélection est conservée au retour. La lecture d’un titre choisi et le passage au suivant avec Spotify restent à confirmer sur Android pour cette version. Quand un compte limite la lecture à la playlist entière, utilisez Lire cette playlist. Spotify limite l’accès aux comptes autorisés pendant le test.</p>
 <h2>Suno</h2>
-<p>Dans Lecture, touchez Suno pour retrouver les morceaux et playlists déjà ajoutés. Pour en choisir un autre, ouvrez votre bibliothèque Suno et utilisez votre connexion habituelle dans le navigateur. Sur la page du morceau ou de la playlist partageable, touchez <strong>Partager → Rhythmbox LeMegaGeek</strong>, puis <strong>Écouter</strong>. La bibliothèque privée est consultable chez Suno.</p>
+<p>Les playlists enregistrées s’affichent en premier. Touchez leur nom pour voir les morceaux dans l’ordre, puis choisissez Lire la playlist ou un titre. Avec <strong>Ajouter depuis Suno</strong>, ouvrez les playlists de votre compte et partagez une liste entière vers <strong>Rhythmbox LeMegaGeek</strong> pour la retrouver dans Lecture.</p>
 <h2>Sur ce téléphone</h2>
 <p>Choisissez un dossier musical dans le sélecteur Android à la première écoute, puis ouvrez une liste et touchez un titre. L’écoute locale fonctionne sans compte.</p>
 <h2>Votre compte musical pCloud.</h2>
@@ -24,7 +24,7 @@
 <p>Un cache privé de 512 Mio prépare le morceau suivant. Choisissez les listes à conserver dans Music/Rhythmbox sous Android 10 et ultérieur, avec l’arborescence des albums et les fichiers originaux. Le lecteur natif affiche l’analyseur gauche/droite et propose l’uniformisation du volume.</p>
 <p>Le jeton pCloud possède techniquement les droits du compte : le choix d’un dossier limite le client, sans créer une permission serveur réduite. Les collections natives sont lisibles par pCloud. Les anciens échanges chiffrés restent un mode distinct.</p>
 <h2>Un analyseur du signal natif.</h2>
-<p>L’analyseur gauche/droite utilise le signal source du lecteur Rhythmbox pour la bibliothèque, pCloud et Suno, sans microphone ni capture de l’audio global du téléphone. Spotify gère le son dans sa propre application.</p>
+<p>L’analyseur mesure les canaux gauche et droit de la lecture native pendant la consultation des listes. Il fonctionne pour les morceaux compatibles du téléphone, de pCloud et de Suno. Spotify ne transmet pas les canaux gauche et droit à Rhythmbox.</p>
 <h2>Gardez la main sur l’écoute.</h2>
 <p>Un titre, un album ou un artiste peut être mis à l’écart sur le téléphone. Les entrées masquées sont exclues de la lecture suivante et des prochains envois ; les fichiers d’origine restent en place. La quarantaine physique reste une opération du client PC.</p>
 <p>Les conteneurs vidéo compatibles sont lus par leur piste audio, sans afficher l’image. La lecture en arrière-plan utilise une commande multimédia Android ; retirer l’application des tâches récentes arrête le son.</p>
